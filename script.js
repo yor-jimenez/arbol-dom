@@ -20,7 +20,7 @@ const createTask = (evento) => {
     titleTask.innerText = value;
     taskContent.appendChild(checkComplete());
     taskContent.appendChild(titleTask);
-    taskContent.appendChild(deleteIcon());
+    // taskContent.appendChild(deleteIcon());
 
     task.appendChild(taskContent);
     // task.innerHTML = content;
