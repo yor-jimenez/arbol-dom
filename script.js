@@ -1,6 +1,6 @@
+import checkComplete from "./components/checkComplete.js";
+import deleteIcon from "./components/deleteIcon.js";
 
-( () => {
-    
 const btn = document.querySelector("[data-form-btn]");
 
 const createTask = (evento) => {
@@ -20,12 +20,11 @@ const createTask = (evento) => {
     titleTask.innerText = value;
     taskContent.appendChild(checkComplete());
     taskContent.appendChild(titleTask);
+    taskContent.appendChild(deleteIcon());
 
-    const content = `
-    <i class="fas fa-trash-alt trashIcon icon"></i>`;
     task.appendChild(taskContent);
     // task.innerHTML = content;
-
+    task.appendChild(deleteIcon());
     list.appendChild(task);
 
     // console.log(content);
@@ -37,18 +36,3 @@ const createTask = (evento) => {
 btn.addEventListener("click", createTask);
 // listener
 // click
-
-const checkComplete = () => {
-    const i = document.createElement("i");
-    i.classList.add("far", "fa-check-square", "icon");
-    i.addEventListener("click", completeTask);
-    return i;
-};
-// Inmediately invoked function expression IIFE, SON FUNCIONES QUE EN CUANTO SE DECLARAN SE EJECUTAN 
-const completeTask = (event) => {
-    const element = event.target
-    element.classList.toggle("fas");
-    element.classList.toggle("completeIcon");
-    element.classList.toggle("far");
-};
-})();
